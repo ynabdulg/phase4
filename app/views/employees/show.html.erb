@@ -1,0 +1,39 @@
+<p>
+  <b>First Name:</b>
+  <%= @employee.first_name%>
+</p>
+
+<p>
+  <b>Last Name:</b>
+  <%= @employee.last_name %>
+</p>
+
+<p>
+  <b>Social Security Number:</b>
+  <%= @employee.ssn %>
+</p>
+
+<p>
+  <b>Date of Birth:</b>
+  <%= @employee.date_of_birth %>
+</p>
+
+<p>
+  <b>Phone Number:</b>
+  <%= @employee.phone %>
+</p> 
+
+<p>
+  <b>Role:</b>
+  <%= @employee.role %>
+</p>
+
+
+<p>
+  <b>Active:</b>
+  <%= @employee.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee), :class => 'waves-effect waves-light btn red' %> |
+<%= link_to 'Back', employees_path, :class => 'waves-effect waves-light btn green' %>

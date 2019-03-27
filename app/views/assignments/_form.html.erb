@@ -1,0 +1,56 @@
+<%= form_for(@assignment) do |f| %>
+<%= hidden_field_tag "assignment[author_ids][]", nil%>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr valign="top">
+			<td>
+
+				<h2>assignment details:</h2>
+				<div class="input-field">
+			    <%= f.label :store_id %><br />
+			    <%= f.number_field :store_id %>
+			  </div>
+			  
+			  <div class="input-field">
+			    <%= f.label :employee_id %><br />
+			    <%= f.number_field :employee_id %>
+			  </div>
+			  
+			  <div class="input-field">     
+				<%= f.label :start_date %>     
+				<%= f.text_field :start_date, prompt: "Start Date", class: "datepicker", :value => 
+				(f.object.start_date.strftime('%B %d, %Y') if f.object.start_date != nil)%>   
+			  </div>
+			  
+			  <div class="input-field">     
+				<%= f.label :end_date %>     
+				<%= f.text_field :end_date, prompt: "End Date", class: "datepicker", :value => 
+				(f.object.end_date.strftime('%B %d, %Y') if f.object.end_date != nil)%>   
+			  </div>
+			  
+			  <div class="input-field">
+			    <%= f.label :pay_level %><br />
+			    <%= f.number_field :pay_level %>
+			  </div>
+
+			  <div class="actions">    
+			  	<%= f.submit :class=>"btn waves-effect waves-light btn green" %>     
+			  	<%= link_to 'Cancel', assignments_path, :class => 'waves-effect waves-light btn red' %>   
+			  </div>
+			</td>
+			<td width="25">&nbsp;</td>
+		</tr>
+	</table>
+<% end %>
+	

@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%= @store.name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @store.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @store.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @store.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @store.zip %>
+</p> 
+
+<p>
+  <b>Phone Number:</b>
+  <%= @store.phone %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @store.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @store.longitude %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @store.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_store_path(@store), :class => 'waves-effect waves-light btn red' %> |
+<%= link_to 'Back', stores_path, :class => 'waves-effect waves-light btn blue' %>

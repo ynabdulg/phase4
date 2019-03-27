@@ -1,0 +1,1 @@
+json.extract! @store, :id, :name, :street, :zip, :city, :phone, :state, :longitude, :latitude, :active, :updated_at

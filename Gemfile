@@ -54,6 +54,8 @@ group :development do
 gem 'sqlite3','~>1.3.6'
 end
 
+gem 'materialize-sass'
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'

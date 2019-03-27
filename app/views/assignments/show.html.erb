@@ -1,6 +1,6 @@
 <p>
   <b>Store:</b>
-  <%= @assignment.:store_id %>
+  <%= @assignment.store_id %>
 </p>
 
 <p>
@@ -14,8 +14,8 @@
 </p>
 
 <p>
-  <b>Date of Birth:</b>
-  <%= @assignment.end_date.strftime("%m/%d/%y") unless @assignent.end_date.nil? %>
+  <b>End Date:</b>
+  <%= @assignment.end_date.strftime("%m/%d/%y") unless @assignment.end_date.nil? %>
 </p>
 
 <p>

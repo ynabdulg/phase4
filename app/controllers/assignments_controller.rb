@@ -2,7 +2,7 @@ class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
     
     def index
-        @assignments = Assignment.alphabetical.paginate(:page => params[:page]).per_page(10)
+        @assignments = Assignment.all.paginate(:page => params[:page]).per_page(10)
     end
     
     def showInactive
@@ -26,7 +26,7 @@ class AssignmentsController < ApplicationController
     def create    
         @assignment = Assignment.new(assignment_params)     
         if @assignment.save       
-            redirect_to assignment_path(@assignment), notice: "#{@assignment.name} was added to the system."     
+            redirect_to assignment_path(@assignment), notice: "assignment number #{@assignment.id} was added to the system."     
         else       
             render action: 'new'     
         end   
@@ -34,7 +34,7 @@ class AssignmentsController < ApplicationController
  
     def update     
         if @assignment.update(assignment_params)       
-            redirect_to assignment_path(@assignment), notice: "#{@assignment.name} was revised in the system."     
+            redirect_to assignment_path(@assignment), notice: "assignment number #{@assignment.id} was revised in the system."     
         else       
             render action: 'edit'     
         end   
@@ -53,5 +53,4 @@ class AssignmentsController < ApplicationController
     def set_assignment 
         @assignment = Assignment.find(params[:id]) 
     end 
-end
 end

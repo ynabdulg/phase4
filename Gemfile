@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'validates_timeliness'
+gem 'will_paginate'
+gem 'simple_form'
+gem 'materialize-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,7 +57,6 @@ group :development do
 gem 'sqlite3','~>1.3.6'
 end
 
-gem 'materialize-sass'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver

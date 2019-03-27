@@ -2,19 +2,19 @@ class StoresController < ApplicationController
     before_action :set_store, only: [:show, :edit, :update, :destroy]
     
     def index
-        @stores = store.alphabetical.paginate(:page => params[:page]).per_page(10)
+        @stores = Store.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
     def showInactive
-        @stores = store.inactive.alphabetical
+        @stores = Store.inactive.alphabetical
     end
     
     def showActive
-        @stores = store.active.alphabetical
+        @stores = Store.active.alphabetical
     end
     
     def new     
-        @store = store.new   
+        @store = Store.new   
     end
     
     def show
@@ -24,7 +24,7 @@ class StoresController < ApplicationController
     end
     
     def create    
-        @store = store.new(store_params)     
+        @store = Store.new(store_params)     
         if @store.save       
             redirect_to store_path(@store), notice: "#{@store.name} was added to the system."     
         else       
@@ -47,11 +47,11 @@ class StoresController < ApplicationController
     
     private   
     def store_params     
-        params.require(:store).permit(:name, :street, :zip)  
+        params.require(:store).permit(:name, :street, :city, :state, :zip, :phone, :active, :longitude, :latitude) 
     end
     
     def set_store 
-        @store = store.find(params[:id]) 
+        @store = Store.find(params[:id]) 
     end 
 end
 

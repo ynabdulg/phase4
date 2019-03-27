@@ -7,7 +7,7 @@
     <th></th>
   </tr>
 
-<% @bstores.each do |store| %>
+<% @stores.each do |store| %>
   <tr>
     <td><%= link_to store.name, store_path(store) %></td>
     <td><%= link_to 'Edit', edit_store_path(store), :class=> "waves-effect waves-light btn light-blue" %></td> 

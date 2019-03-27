@@ -1,5 +1,5 @@
-<%= form_for(@store) do |s| %>
-	<%= hidden_field_tag "store[author_ids][]", nil%>
+<%= form_for(@store) do |f| %>
+<%= hidden_field_tag "store[author_ids][]", nil%>
   <% if @store.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
@@ -49,27 +49,23 @@
 	
 				<div class="input-field">
 			    <%= f.label :latitude %><br />
-			    <%= f.number_field :latitude %>
+			    <%= f.number_field :latitude, :step => :any %>
 			  </div>
 			  
 			  <div class="input-field">
 			    <%= f.label :longitude %><br />
-			    <%= f.number_field :longitude %>
+			    <%= f.number_field :longitude, :step => :any %>
 			  </div>
 			  
-			<!-- double check syntax -->
-			<div class="col s3">     
-					<%= f.check_box :active, {:multiple => true, :active=>store.active}, true, nil %>     
-					<%= f.label :active, :for=>store.active %>  
-				</div>
-				
-			<div class="col s3">     
-					<%= f.check_box :active, {:multiple => true, :active=>store.active}, false, nil %>     
-					<%= f.label :active, :for=>store.active %>  
-				</div>
+			  <div class="input-field">
+			    <%= f.label :active %><br />
+			    <%= f.text_field :active %>
+			  </div>
+			  
+			
 
 			  <div class="actions">    
-			  	<%= f.submit :class=>"btn waves-effect waves-light green" %>     
+			  	<%= f.submit :class=>"btn waves-effect waves-light btn green" %>     
 			  	<%= link_to 'Cancel', stores_path, :class => 'waves-effect waves-light btn red' %>   
 			  </div>
 			</td>
@@ -77,3 +73,4 @@
 		</tr>
 	</table>
 <% end %>
+	

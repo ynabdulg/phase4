@@ -5,13 +5,10 @@ class AssignmentsController < ApplicationController
         @assignments = Assignment.all.paginate(:page => params[:page]).per_page(10)
     end
     
-    def showInactive
-        @assignments = Assignment.inactive.alphabetical
+    def for_store(id)
+        @assignments = Assignment.for_store(id).alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
-    def showActive
-        @assignments = Assignment.active.alphabetical
-    end
     
     def new     
         @assignment = Assignment.new   

@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   resources :stores
   resources :assignments
   resources :employees
+  
+  # Additional routes we've created for this project
+  get 'active' => 'stores#active', as: :active_stores
+  get 'inactive' => 'stores#inactive', as: :inactive_stores
 end

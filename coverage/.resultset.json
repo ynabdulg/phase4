@@ -1,7 +1,7 @@
 {
   "MiniTest": {
     "coverage": {
-      "/home/ubuntu/workspace/phase3_starter/app/models/store.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/store.rb": [
         1,
         null,
         1,
@@ -45,12 +45,12 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/models/application_record.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/models/assignment.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/assignment.rb": [
         1,
         null,
         1,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/models/employee.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/employee.rb": [
         1,
         null,
         1,
@@ -181,37 +181,225 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/controllers/application_controller.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/phase3_starter/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/phase3_starter/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/phase3_starter/app/channels/application_cable/connection.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/channels/application_cable/channel.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/ubuntu/workspace/phase3_starter/app/mailers/application_mailer.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/helpers/store_helper.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/helpers/employee_helper.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/helpers/assignment_helper.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/controllers/employees_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/controllers/application_controller.rb": [
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/controllers/assignments_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/controllers/stores_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1553104265
+    "timestamp": 1553722152
   }
 }

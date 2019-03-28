@@ -1,11 +1,6 @@
-<h2>Stores in the System</h2>
-
-<table  class="striped" >
-  <tr>
-    <th>Store</th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2>Active Stores in the System</h2>
+<div class="col s9">
+<table class="bordered centered">
 
 <% @stores.each do |store| %>
   <tr>
@@ -15,16 +10,16 @@
   </tr>
 <% end %>
 </table>
-    <div class="col s1">    
-    </div> 
-      <div class="col s3">       
-        <!-- SIDEBAR CONTENT GOES HERE -->       
-        <%= render partial: 'partials/stores/quick_links' %>     
-      </div> 
 <br />
 <!-- Add the pagination using will_paginate gem -->
 <span class="paginate">
 <%= will_paginate @stores, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
-
+</div>
 <br />
+<div class="Section"></div>
+<div class="col s3">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/stores/quick_links' %>     
+</div> 
+</div> 

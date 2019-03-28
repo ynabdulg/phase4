@@ -42,7 +42,12 @@
   <b>Active:</b>
   <%= @store.active %>
 </p>
-
+<div class="col s1">    
+</div> 
+<div class="col s3">       
+        <!-- SIDEBAR CONTENT GOES HERE -->       
+        <%= render partial: 'partials/stores/quick_links' %>     
+</div> 
 
 <%= link_to 'Edit', edit_store_path(@store), :class => 'waves-effect waves-light btn red' %> |
 <%= link_to 'Back', stores_path, :class => 'waves-effect waves-light btn green' %>

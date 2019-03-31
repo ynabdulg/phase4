@@ -13,6 +13,25 @@ class EmployeesController < ApplicationController
         @employees = Employee.active.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
+    def younger_than_18
+        @employees = Employee.younger_than_18.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end 
+    
+    def 18_or_older
+        @employees = Employee.is_18_or_older.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end
+  
+    def regulars
+        @employees = Employee.regulars.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end 
+    
+    def managers
+        @employees = Employee.managers.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end 
+    
+    def admins
+        @employees = Employee.admins.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end
     
     def new     
         @employee = Employee.new   

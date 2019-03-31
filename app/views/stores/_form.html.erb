@@ -62,8 +62,12 @@
 			    <%= f.text_field :active %>
 			  </div>
 			  
-			
-
+      		 
+      		 <div>   
+      		 	<%= f.label :active %><br />
+				<%= f.check_box :active, {:multiple => true}, true, false %> 
+			 </div>
+				
 			  <div class="actions">    
 			  	<%= f.submit :class=>"btn waves-effect waves-light btn green" %>     
 			  	<%= link_to 'Cancel', stores_path, :class => 'waves-effect waves-light btn red' %>   

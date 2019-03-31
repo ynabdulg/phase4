@@ -9,7 +9,6 @@ class AssignmentsController < ApplicationController
         @assignments = Assignment.for_store(id).alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
-    
     def new     
         @assignment = Assignment.new   
     end

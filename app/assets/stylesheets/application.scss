@@ -1,5 +1,5 @@
-$primary-color: #4527a0; 
-$table-striped-color: #e1bee7; 
+$primary-color: #e1bee7; 
+$table-color: #e1bee7; 
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 $button-height: 26px;
 #toast-container {
@@ -7,3 +7,8 @@ $button-height: 26px;
     right: auto !important; 
 }
 @import "materialize";
+body {
+  background: {
+     image: asset_url("back.png");
+  }
+}

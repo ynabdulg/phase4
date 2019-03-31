@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+ 
 <head>
   <title>Amazing & Marvelous Creamery :: <%= controller.controller_name.capitalize %> - <%= controller.action_name.capitalize %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body> 
 <!-- Dropdown Structure --> 
@@ -25,7 +27,8 @@
 <nav>   
   <div class="nav-wrapper">     
     &nbsp&nbsp     
-    <a href="/" class="brand-logo">Creamery Manager</a> 
+    <a href="/" class="brand-logo">Amazing & Marvelous Creamery</a> 
+    <a href="#" class="brand-logo center"><img src="https://purepng.com/public/uploads/large/purepng.com-ice-creamice-creamcreamsweetfrozen-1411527619000jmeti.png" width="60" height="60"></a>
  
     <ul class="right">       
       <li><%# link_to "employees", employees_path %></li>
@@ -48,12 +51,13 @@
 
     <footer>     
       <div class="row">       
-        <div class="center">        
+        <div class="center page-footer #fce4ec">        
           <%= render partial: 'partials/footer' %>      
         </div>     
       </div>    
     </footer>   
 </body> 
+
 <%= javascript_include_tag "application" %>
 <% flash.each do |message_type, message| %>     
   <%= javascript_tag "Materialize.toast('#{message}', 4000)" %>   

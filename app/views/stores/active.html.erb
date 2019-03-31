@@ -1,7 +1,6 @@
 <h2>Active Stores in the System</h2>
-<div class="col s9">
+<div class="col s8">
 <table class="bordered centered">
-
 <% @stores.each do |store| %>
   <tr>
     <td><%= link_to store.name, store_path(store) %></td>
@@ -17,8 +16,10 @@
 </span>
 </div>
 <br />
-<div class="Section"></div>
-<div class="col s3">       
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
     <!-- SIDEBAR CONTENT GOES HERE -->       
     <%= render partial: 'partials/stores/quick_links' %>     
 </div> 

@@ -17,14 +17,15 @@
 			<td>
 
 				<h2>assignment details:</h2>
-				<div class="input-field">
+				
+			  <div class="input-field">
 			    <%= f.label :store_id %><br />
-			    <%= f.number_field :store_id %>
+			    <%= f.collection_select :store_id, Store.alphabetical, :id, :name, :prompt => "Select ..." %>
 			  </div>
 			  
 			  <div class="input-field">
 			    <%= f.label :employee_id %><br />
-			    <%= f.number_field :employee_id %>
+			    <%= f.collection_select :employee_id, Employee.alphabetical, :id, :first_name, :prompt => "Select ..." %>
 			  </div>
 			  
 			  <div class="input-field">     

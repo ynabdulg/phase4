@@ -13,8 +13,6 @@ class EmployeesController < ApplicationController
         @employees = Employee.active.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
-    def showActive
-        @employees = Employee.alphabetical.for_store.paginate(:page => params[:page]).per_page(10)
     
     def new     
         @employee = Employee.new   
@@ -57,3 +55,4 @@ class EmployeesController < ApplicationController
         @employee = Employee.find(params[:id]) 
     end 
 end
+

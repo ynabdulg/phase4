@@ -10,13 +10,21 @@ Rails.application.routes.draw do
   get 'inactive' => 'stores#inactive', as: :inactive_stores
   
   # links for employee scopes
-  get 'active' => 'employees#active', as: :active_employees
-  get 'inactive' => 'employees#inactive', as: :inactive_employees
-  get 'younger_than_18' => 'employees#younger_than_18', as: :younger_employees
-  get '18_or_older' => 'employees#18_or_older', as: :older_employees
+  get 'employee_active' => 'employees#active', as: :active_employees
+  get 'employee_inactive' => 'employees#inactive', as: :inactive_employees
+  get 'younger' => 'employees#younger', as: :younger_employees
+  get 'older' => 'employees#older', as: :older_employees
   get 'regulars' => 'employees#regulars', as: :regulars_employees
   get 'managers' => 'employees#managers', as: :managers_employees
   get 'admins' => 'employees#admins', as: :admins_employees
+  
+  
+  # links for assignments scopes
+  get 'past' => 'assignments#past', as: :past_assignments
+  get 'current' => 'assignments#current', as: :current_assignments
+  get 'by_store' => 'assignments#by_store', as: :by_store_assignments
+  get 'by_employee' => 'assignments#by_employee', as: :by_employee_assignments
+ 
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main

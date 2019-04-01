@@ -13,11 +13,11 @@ class EmployeesController < ApplicationController
         @employees = Employee.active.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
     
-    def younger_than_18
+    def younger
         @employees = Employee.younger_than_18.alphabetical.paginate(:page => params[:page]).per_page(10)
     end 
     
-    def 18_or_older
+    def older
         @employees = Employee.is_18_or_older.alphabetical.paginate(:page => params[:page]).per_page(10)
     end
   

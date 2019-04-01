@@ -2,11 +2,23 @@ class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
     
     def index
-        @assignments = Assignment.all.paginate(:page => params[:page]).per_page(10)
+        @assignments = Assignment.all.chronological.paginate(:page => params[:page]).per_page(10)
     end
     
-    def for_store(id)
-        @assignments = Assignment.for_store(id).alphabetical.paginate(:page => params[:page]).per_page(10)
+    def past
+        @assignments = Assignment.past.chronological.paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def current
+        @assignments = Assignment.current.chronological.paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def by_employee
+        @assignments = Assignment.by_employee.paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def by_store
+        @assignments = Assignment.by_store.paginate(:page => params[:page]).per_page(10)
     end
     
     def new     

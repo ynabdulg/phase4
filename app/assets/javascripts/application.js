@@ -27,7 +27,23 @@ $( document ).ready(function () {
         close: 'Ok',
         closeOnSelect: false // Close upon selecting a date,   
     });
-    $(window).on('load', function() {
-$('.preloader').delay(1000).fadeOut('slow');
-});
 })
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    $('.fixed-action-btn').openFAB();
+  $('.fixed-action-btn').closeFAB();
+  $('.fixed-action-btn.toolbar').openToolbar();
+  $('.fixed-action-btn.toolbar').closeToolbar();
+  $(document).ready(function(){
+      $('.slider').slider();
+    });
+    // Pause slider
+    $('.slider').slider('pause');
+    // Start slider
+    $('.slider').slider('start');
+    // Next slide
+    $('.slider').slider('next');
+    // Previous slide
+    $('.slider').slider('prev');
+   

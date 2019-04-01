@@ -1,6 +1,8 @@
-<h2>employees in the System</h2>
-
-<table  class="striped" >
+<div class="center white">
+<h2>Employees in the System</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
   <tr>
     <th>employee</th>
     <th></th>
@@ -20,5 +22,13 @@
 <span class="paginate">
 <%= will_paginate @employees, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
-
+</div>
 <br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/employees/quick_links' %>     
+</div> 
+</div>

@@ -21,6 +21,13 @@ class AssignmentsController < ApplicationController
         @assignments = Assignment.by_store.paginate(:page => params[:page]).per_page(10)
     end
     
+    def for_store
+        @assignments = Assignment.for_store(params[:assignment][:store_id]).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def get_store
+    end
+    
     def new     
         @assignment = Assignment.new   
     end
@@ -34,7 +41,7 @@ class AssignmentsController < ApplicationController
     def create    
         @assignment = Assignment.new(assignment_params)     
         if @assignment.save       
-            redirect_to assignment_path(@assignment), notice: "assignment number #{@assignment.id} was added to the system."     
+            redirect_to assignment_path(@assignment), notice: "#{@assignment.employee_id.name} is assigned to #{@assignment.store_id.name}"    
         else       
             render action: 'new'     
         end   
@@ -42,7 +49,7 @@ class AssignmentsController < ApplicationController
  
     def update     
         if @assignment.update(assignment_params)       
-            redirect_to assignment_path(@assignment), notice: "assignment number #{@assignment.id} was revised in the system."     
+            redirect_to assignment_path(@assignment), notice: "#{@assignment.employee_id.name}'s assignment to #{@assignment.store_id.name}  is updated"     
         else       
             render action: 'edit'     
         end   

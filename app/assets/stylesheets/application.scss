@@ -1,10 +1,28 @@
 $primary-color: #e1bee7; 
 $table-color: #e1bee7; 
+$font-family-display: Georgia;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 $button-height: 26px;
 #toast-container {
     left:1%;
     right: auto !important; 
 }
+
+p {
+  font-family: Courier New, Monospace;
+}
+
+h1 {
+  font-family: Courier New, Monospace;
+}
+
+h2 {
+  font-family: Courier New, Monospace;
+}
+
+h5 {
+  font-family: Courier New, Monospace;
+}
+
 @import "materialize";
 

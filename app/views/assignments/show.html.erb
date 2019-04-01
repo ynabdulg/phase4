@@ -1,28 +1,58 @@
-<p>
-  <b>Store:</b>
-  <%= @assignment.store_id %>
-</p>
+<div class="center white">
+<h2>Assignment details</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
+  <thead>
+          <tr>
+              <th>Store</th>
+              <th>Employee</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Pay Level</th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><%=Store.find(@assignment.store_id).name%></td>
+            <td><%=Employee.find(@assignment.employee_id).name%></td>
+            <td><%=@assignment.start_date.strftime("%m/%d/%y")%></td>
+            <td><%=@assignment.end_date.strftime("%m/%d/%y") unless @assignment.end_date.nil?%></td>
+            <td><%=@assignment.pay_level%></td>
+          </tr>
+  </tbody>
+</table>
+</br>
+</br>
+<button class="waves-effect waves-light btn red"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_assignment_path(@assignment), :class=>"white-text" %> </button> 
+<button class="waves-effect waves-light btn green"><i class="material-icons right">keyboard_backspace</i><%= link_to 'Back', assignments_path, :class=>"white-text" %> </button>
+</div>
 
-<p>
-  <b>Employee:</b>
-  <%= @assignment.employee_id %>
-</p>
-
-<p>
-  <b>Start Date:</b>
-  <%= @assignment.start_date.strftime("%m/%d/%y") %>
-</p>
-
-<p>
-  <b>End Date:</b>
-  <%= @assignment.end_date.strftime("%m/%d/%y") unless @assignment.end_date.nil? %>
-</p>
-
-<p>
-  <b>Pay level:</b>
-  <%= @assignment.pay_level %>
-</p> 
+<div class="col s1">    
+</div> 
+<div class="col s3">       
+        <!-- SIDEBAR CONTENT GOES HERE -->       
+        <%= render partial: 'partials/assignments/quick_links' %>     
+</div> 
 
 
-<%= link_to 'Edit', edit_assignment_path(@assignment), :class => 'waves-effect waves-light btn red' %> |
-<%= link_to 'Back', assignments_path, :class => 'waves-effect waves-light btn green' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

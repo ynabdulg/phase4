@@ -45,8 +45,8 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      @assign_ben = FactoryBot.create(:assignment, employee: @ben, store: @cmu, start_date: 2.years.ago.to_date, end_date: 7.months.ago.to_date, pay_level: 3)
-      post assignments_url, params: { assignment: { store_id: @assign_ben.store_id, employee_id: @assign_ben.employee_id, start_date: @assign_ben.start_date, pay_level: @assign_ben.pay_level} }
+      @assign = FactoryBot.create(:assignment, employee: @cindy, store: @cmu, start_date: 1.day.ago.to_date, end_date: nil)
+      post assignments_url, params: { assignment: { store_id: @assign.store_id, employee_id: @assign.employee_id, start_date: @assign.start_date, end_date: @assign.end_date} }
     end
   end
 

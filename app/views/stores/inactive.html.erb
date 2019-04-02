@@ -3,11 +3,14 @@
 </div>
 <div class="col s8">
 <table class="bordered centered white">
-  <tr>
-    <th>Stores</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+          <tr>
+              <th>Store</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+  </thead>
+  <tbody>
 
 <% @stores.each do |store| %>
   <tr>

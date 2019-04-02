@@ -5,15 +5,15 @@
 <table class="bordered centered white">
   <tr>
     <th>employee</th>
-    <th></th>
-    <th></th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
 <% @employees.each do |employee| %>
   <tr>
-    <td><%= link_to employee.name, employee_path(employee) %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee), :class=> "waves-effect waves-light btn light-blue" %></td> 
-    <td><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete,  :class=> "waves-effect waves-light btn red" %></td>
+    <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">person</i><%= link_to employee.name, employee_path(employee), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_employee_path(employee), :class=>"white-text" %> </button></td> 
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
   </tr>
 <% end %>
 </table>

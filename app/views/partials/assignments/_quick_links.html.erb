@@ -17,10 +17,15 @@
       <li><%= link_to 'Current assignments', current_assignments_path, :class => "collection-item" %></li>
       <li><%= link_to 'Assignments Ordered by Store', by_store_assignments_path, :class => "collection-item" %></li>
       <li><%= link_to 'Assignments Ordered by Employee', by_employee_assignments_path, :class => "collection-item" %></li>
-      <li><%= link_to 'Assignments For Given Store', get_store_assignments_path, :class => "collection-item" %></li>
-      <li><%= link_to 'Assignments For Given Employee', assignments_path, :class => "collection-item" %></li>
-      <li><%= link_to 'Assignments For Given Role', assignments_path, :class => "collection-item" %></li>
-      <li><%= link_to 'Assignments For Given PayLevel', assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments For Regular Employees', for_employees_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments For Managers', for_managers_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments For Admins', for_admins_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 1', for_one_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 2', for_two_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 3', for_three_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 4', for_four_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 5', for_five_assignments_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Assignments with PayLevel 6', for_six_assignments_path, :class => "collection-item" %></li>
     </ul>
    </div>
       </div>

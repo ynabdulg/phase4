@@ -1,0 +1,41 @@
+<div class="center white">
+<h2>Pay Level 6 Assignments</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
+  <thead>
+          <tr>
+              <th>assignment</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+  </thead>
+  <tbody>
+
+<% @assignments.each do |assignment| %>
+  <tr>
+  <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">assignment</i><%= link_to assignment.id, assignment_path(assignment), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_assignment_path(assignment), :class=>"white-text" %> </button></td> 
+<td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', assignment, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
+  
+  </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @assignments, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+</div>
+<br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/assignments/quick_links' %>     
+</div> 
+</div>

@@ -21,11 +21,40 @@ class AssignmentsController < ApplicationController
         @assignments = Assignment.by_store.paginate(:page => params[:page]).per_page(10)
     end
     
-    def for_store
-        @assignments = Assignment.for_store(params[:assignment][:store_id]).paginate(:page => params[:page]).per_page(10)
+    def for_employees
+        @assignments = Assignment.for_role("employee").paginate(:page => params[:page]).per_page(10)
     end
     
-    def get_store
+    def for_managers
+        @assignments = Assignment.for_role("manager").paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_admins
+        @assignments = Assignment.for_role("admin").paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_one
+        @assignments = Assignment.for_pay_level(1).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_two
+        @assignments = Assignment.for_pay_level(2).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_three
+        @assignments = Assignment.for_pay_level(3).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_four
+        @assignments = Assignment.for_pay_level(4).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_five
+        @assignments = Assignment.for_pay_level(5).paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def for_six
+        @assignments = Assignment.for_pay_level(6).paginate(:page => params[:page]).per_page(10)
     end
     
     def new     

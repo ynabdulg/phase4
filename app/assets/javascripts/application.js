@@ -27,7 +27,7 @@ $( document ).ready(function () {
         close: 'Ok',     
         closeOnSelect: false // Close upon selecting a date,   
     });
-
+});
+$( document ).ready(function () {
     $('.parallax').parallax();
-
 });

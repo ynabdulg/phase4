@@ -43,16 +43,16 @@
 			    <%= f.text_field :phone %>
 			  </div>
 			  
-			  <div class="input-field">
+			  <div class="field">
 			    <%= f.label :role %><br />
-			    <%= f.text_field :role %>
+			    <%= f.select :role, options_for_select([['Employee', 'employee'], ['Manager','manager'], ['Admin', 'admin']]), :prompt => "Select ..." %>
 			  </div>
 
 
 			  
-			  <div class="input-field">
+			  <div class="field">
 			    <%= f.label :active %><br />
-			    <%= f.text_field :active %>
+			    <%= f.select :active, options_for_select([['Active', true], ['Inactive',false]]), :prompt => "Select ..." %>
 			  </div>
 			  
 			

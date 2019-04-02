@@ -40,9 +40,9 @@
 				(f.object.end_date.strftime('%B %d, %Y') if f.object.end_date != nil)%>   
 			  </div>
 			  
-			  <div class="input-field">
+			  <div class="field">
 			    <%= f.label :pay_level %><br />
-			    <%= f.number_field :pay_level %>
+			    <%= f.select :pay_level, options_for_select([['1', 1], ['2',2], ['3', 3], ['4', 4], ['5', 5]]), :prompt => "Select ..." %>
 			  </div>
 
 			  <div class="actions">    

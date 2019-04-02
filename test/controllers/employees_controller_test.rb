@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EmployeeControllerTest < ActionDispatch::IntegrationTest
+class EmployeesControllerTest < ActionDispatch::IntegrationTest
         setup do
     create_stores
     create_employees
@@ -58,10 +58,8 @@ test "should get regulars" do
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post employees_url, params: { employee: { first_name: @cindy.first_name, last_name: @cindy.last_name, sssn: @cindy.ssn, date_of_birth: @cindy.date_of_birth, phone: @cindy.phone, role: @cindy.role, active: @cindy.active} }
+      post employees_url, params: { employee: { first_name:"Yara", last_name:"Abdulla", sssn: "33333", date_of_birth: "1990/07/08", phone: "9876543210", role: "admin", active: true} }
     end
-
-    assert_redirected_to employee_url(@cindy)
   end
 
   test "should show employee" do

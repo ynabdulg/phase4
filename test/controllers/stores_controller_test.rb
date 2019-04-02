@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StoreControllerTest < ActionDispatch::IntegrationTest
+class StoresControllerTest < ActionDispatch::IntegrationTest
   setup do
     create_employees
     create_stores
@@ -35,10 +35,9 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
 
   test "should create store" do
     assert_difference('Store.count') do
-      post stores_url, params: { store: { active: @cmu.active, city: @cmu.city, latitude: @cmu.latitude, longitude: @cmu.longitude, name: @cmu.name, phone: @cmu.phone, state: @cmu.state, street: @cmu.street, zip: @cmu.zip } }
+       @oakland1 = FactoryBot.create(:store, name: "Oakland1", phone: "412-268-8241")
+    post stores_url, params: { store: { name: @oakland1.name, phone: @oakland1.phone} }
     end
-
-    assert_redirected_to store_url(@cmu)
   end
 
   test "should show store" do

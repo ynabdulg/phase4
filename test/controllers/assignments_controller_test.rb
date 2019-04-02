@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AssignmentControllerTest < ActionDispatch::IntegrationTest
+class AssignmentsControllerTest < ActionDispatch::IntegrationTest
      setup do
     create_stores
     create_employees
@@ -45,7 +45,7 @@ class AssignmentControllerTest < ActionDispatch::IntegrationTest
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      post assignments_url, params: { assignment: { store_id: @assign_ed.store_id, employee_id: @assign_ed.employee_id, start_date: @assign_ed.start_date, end_date: @assign_ed.end_date, pay_level: @assign_ed.pay_level } }
+      post assignments_url, params: { assignment: { store_id: "1", employee_id: "1", start_date: "2019/01/01", pay_level: 5 } }
     end
 
     assert_redirected_to assignment_url(@assign_ed)

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StoreTest < ActiveSupport::TestCase
+class StoresTest < ActiveSupport::TestCase
   # Test relationships
   should have_many(:assignments)
   should have_many(:employees).through(:assignments)

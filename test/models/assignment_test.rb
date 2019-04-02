@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AssignmentTest < ActiveSupport::TestCase
+class AssignmentsTest < ActiveSupport::TestCase
   # Test relationships
    should belong_to(:employee)
    should belong_to(:store)

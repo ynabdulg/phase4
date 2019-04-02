@@ -58,7 +58,8 @@ test "should get regulars" do
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post employees_url, params: { employee: { first_name:"Yara", last_name:"Abdulla", sssn: "33333", date_of_birth: "1990/07/08", phone: "9876543210", role: "admin", active: true} }
+      @cindy = FactoryBot.create(:employee, first_name: "Cindy", last_name: "Crawford", ssn: "084-35-7777", date_of_birth: 17.years.ago.to_date)
+      post employees_url, params: { employee: { first_name: @cindy.first_name, last_name: @cindy.last_name, ssn: @cindy.ssn, date_of_birth: @cindy.date_of_birth, phone: @cindy.phone, role: @cindy.role, active: @cindy.active} }
     end
   end
 

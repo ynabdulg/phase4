@@ -1,18 +1,19 @@
+<div class="center white">
 <h2>assignments in the System</h2>
 </div>
 <div class="col s8">
 <table class="bordered centered">
   <tr>
     <th>assignment</th>
-    <th></th>
-    <th></th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
 <% @assignments.each do |assignment| %>
   <tr>
-    <td><%= link_to assignment.id, assignment_path(assignment) %></td>
-    <td><%= link_to 'Edit', edit_assignment_path(assignment), :class=> "waves-effect waves-light btn light-blue" %></td> 
-    <td><%= link_to 'Destroy', assignment, confirm: 'Are you sure?', method: :delete,  :class=> "waves-effect waves-light btn red" %></td>
+    <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">assignment</i><%= link_to assignment.id, assignment_path(assignment), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_assignment_path(assignment), :class=>"white-text" %> </button></td> 
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', assignment, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
   </tr>
 <% end %>
 </table>
@@ -27,7 +28,7 @@
 <div class="col s1 center"> 
 </div>
 <div class="col s3 center">       
-    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <!-- SIDEBAR  -->       
     <%= render partial: 'partials/assignments/quick_links' %>     
 </div> 
 </div>

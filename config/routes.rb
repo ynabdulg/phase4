@@ -24,8 +24,16 @@ Rails.application.routes.draw do
   get 'current' => 'assignments#current', as: :current_assignments
   get 'by_store' => 'assignments#by_store', as: :by_store_assignments
   get 'by_employee' => 'assignments#by_employee', as: :by_employee_assignments
-  get 'for_store' => 'assignments#for_store', as: :for_store_assignments
-  get 'get_store' => 'assignments#get_store', as: :get_store_assignments
+  get 'for_employees' => 'assignments#for_employees', as: :for_employees_assignments
+  get 'for_managers' => 'assignments#for_managers', as: :for_managers_assignments
+  get 'for_admins' => 'assignments#for_admins', as: :for_admins_assignments
+  get 'for_one' => 'assignments#for_one', as: :for_one_assignments
+  get 'for_two' => 'assignments#for_two', as: :for_two_assignments
+  get 'for_three' => 'assignments#for_three', as: :for_three_assignments
+  get 'for_four' => 'assignments#for_four', as: :for_four_assignments
+  get 'for_five' => 'assignments#for_five', as: :for_five_assignments
+  get 'for_six' => 'assignments#for_six', as: :for_six_assignments
+  
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main

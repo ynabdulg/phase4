@@ -1,30 +1,37 @@
+<div class="center white">
 <h2>Inactive Stores in the System</h2>
-
-<table  class="striped" >
-  <tr>
-    <th>Stores</th>
-    <th></th>
-    <th></th>
-  </tr>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
+  <thead>
+          <tr>
+              <th>Store</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+  </thead>
+  <tbody>
 
 <% @stores.each do |store| %>
   <tr>
-    <td><%= link_to store.name, store_path(store) %></td>
-    <td><%= link_to 'Edit', edit_store_path(store), :class=> "waves-effect waves-light btn light-blue" %></td> 
-    <td><%= link_to 'Destroy', store, confirm: 'Are you sure?', method: :delete,  :class=> "waves-effect waves-light btn red" %></td>
+  <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">store</i><%= link_to store.name, store_path(store), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_store_path(store), :class=>"white-text" %> </button></td> 
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', store, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
   </tr>
 <% end %>
 </table>
-<div class="col s1">    
-</div> 
-<div class="col s3">       
-    <!-- SIDEBAR CONTENT GOES HERE -->       
-    <%= render partial: 'partials/stores/quick_links' %>     
-</div> 
 <br />
 <!-- Add the pagination using will_paginate gem -->
 <span class="paginate">
 <%= will_paginate @stores, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
-
+</div>
 <br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/stores/quick_links' %>     
+</div> 
+</div>

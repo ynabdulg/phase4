@@ -33,6 +33,51 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
+  test "should get for employees" do
+    get for_employees_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for managers" do
+    get for_managers_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for admins" do
+    get for_admins_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for one" do
+    get for_one_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for two" do
+    get for_two_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for three" do
+    get for_three_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for four" do
+    get for_four_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for five" do
+    get for_five_assignments_path
+    assert_response :success
+  end
+  
+  test "should get for six" do
+    get for_six_assignments_path
+    assert_response :success
+  end
+  
   test "should get by employee" do
     get by_employee_assignments_path
     assert_response :success

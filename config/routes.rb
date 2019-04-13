@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :assignments
   resources :employees
   resources :home
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   # links for store scopes
   get 'active' => 'stores#active', as: :active_stores
@@ -41,6 +43,12 @@ Rails.application.routes.draw do
   get 'about' => 'home#about', as: :about
   get 'contact' => 'home#contact', as: :contact
   
+  
+  #links for login and logout
+  get 'sessions/new', to: 'sessions#new', as: :login
+  get 'sessions/destroy', to: 'sessions#destroy', as: :logout
+
   # Set the root url
-  root :to => 'home#home'  
+  root :to => 'sessions#new'
+  
 end

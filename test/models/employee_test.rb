@@ -72,7 +72,7 @@ class EmployeesTest < ActiveSupport::TestCase
       assert_equal ["Crawford", "Wilson"], Employee.younger_than_18.map{|e| e.last_name}.sort
     end
     
-    # test scope younger_than_18
+    # test scope is_18_or_older
     should "show there are four employees over 18" do
       assert_equal 4, Employee.is_18_or_older.size
       assert_equal ["Gruberman", "Heimann", "Janeway", "Sisko"], Employee.is_18_or_older.map{|e| e.last_name}.sort

@@ -1,4 +1,6 @@
+<div class="col s8 center">
 <%= form_for(:sessions, url: sessions_path) do |f| %>
+
     <%= f.label :email %>
     <%= f.email_field :email %>
     
@@ -7,3 +9,4 @@
     
     <%= f.submit "Login" %>
 <% end %>
+</div>

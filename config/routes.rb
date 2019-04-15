@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :home
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :shifts
   
   # links for store scopes
   get 'active' => 'stores#active', as: :active_stores

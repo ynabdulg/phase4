@@ -6,6 +6,7 @@ class Shift < ApplicationRecord
     # Validations
     # make sure required fields are present
     validates_presence_of :assignment_id, :date, :start_time
+    validates_presence_of :assignment_id, on: :update
     #make sure date is set either today or in the future for new shifts
     validates_date :date, on_or_after: lambda { Date.current }, on_or_after_message: "Date must be either today or sometime in the future"
     #validate start time
@@ -55,7 +56,7 @@ class Shift < ApplicationRecord
     #custom validation method
     def only_current_assignment
         unless self.assignment.nil? || self.assignment.end_date.nil?
-            errors.add(:assignment_id, "is not a past assignment at the creamery, please choose a current assignment")
+            errors.add(:assignment_id, "is a past assignment at the creamery, please choose a current assignment")
         end
     end
     

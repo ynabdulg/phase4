@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flavors
   resources :shift_jobs
   resources :jobs
   resources :users

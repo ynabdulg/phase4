@@ -48,7 +48,7 @@ class JobTest < ActiveSupport::TestCase
     
     #test callback
     should "check that job can only be deleted if not worked by employee" do
-      assert_equal false, @job1.destroyed? #job 1 can't be deleted because it has a 
+      assert_equal false, @job1.destroyed? #job 1 can't be deleted because it has a shift worked by an employee
     end
 end
 end

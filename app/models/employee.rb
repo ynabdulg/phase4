@@ -2,10 +2,18 @@ class Employee < ApplicationRecord
  # Callbacks
   before_save :reformat_phone
   before_validation :reformat_ssn
+  before_destroy :before_delete?
+  after_destroy :delete_assignments
+
   
   # Relationships
   has_many :assignments
   has_many :stores, through: :assignments
+  has_many :shifts, through: :assignments
+  has_one :user, dependent: :destroy
+  
+  #nested user
+  accepts_nested_attributes_for :user, reject_if: lambda { |user| user[:email].blank? }, allow_destroy: true
   
   # Validations
   validates_presence_of :first_name, :last_name, :date_of_birth, :ssn, :role
@@ -62,10 +70,31 @@ class Employee < ApplicationRecord
      phone.gsub!(/[^0-9]/,"") # strip all non-digits
      self.phone = phone       # reset self.phone to new string
    end
+   
    def reformat_ssn
      ssn = self.ssn.to_s      # change to string in case input as all numbers 
      ssn.gsub!(/[^0-9]/,"")   # strip all non-digits
      self.ssn = ssn           # reset self.ssn to new string
    end
+   
+  #can only be deleted if the employee has never worked a shift.
+  def before_delete?
+    self.shifts.past.empty?
+  end
+
+  #If the employee can be deleted, their assignment (if it exists) should also be deleted.
+  def delete_assignments
+    if self.shifts.past.empty?
+      self.current_assignment.delete unless self.current_assignment.nil?
+    end
+  end
+  
+  # If the employee can't be deleted, the employee should be made inactive, their current assignment terminated and all future shifts should be deleted. 
+  #delete future shifts 
+  def delete_future_shifts
+    @future = self.shifts.upcoming
+    @future.each {|shift| shift.destroy} unless @future.empty?
+  end
+  
 end
 

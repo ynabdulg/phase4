@@ -3,10 +3,16 @@ class Shift < ApplicationRecord
     #callbacks
     before_create :set_end_time
     
+    # Relationships
+    has_one :store, through: :assignment
+    has_one :employee, through: :assignment
+    belongs_to :assignment
+    has_many :shift_jobs
+    has_many :jobs, through: :shift_jobs
+    
     # Validations
     # make sure required fields are present
     validates_presence_of :assignment_id, :date, :start_time
-    validates_presence_of :assignment_id, on: :update
     #make sure date is set either today or in the future for new shifts
     validates_date :date, on_or_after: lambda { Date.current }, on_or_after_message: "Date must be either today or sometime in the future"
     #validate start time
@@ -17,8 +23,8 @@ class Shift < ApplicationRecord
     validate :only_current_assignment
     
     #scopes for shift
-    scope :completed, -> { joins(:shift_jobs).group(:shift_id) }
-    scope :incomplete, -> { joins(:shift_jobs).where('shift_jobs.job_id IS NULL') }
+    scope :completed, -> { joins(:shift_jobs).where.not(job_id: nil) }
+    scope :incomplete, -> { joins(:shift_jobs).where(job_id: nil) }
     scope :for_store, ->(store_id) { joins(:assignment, :store).where("assignments.store_id = ?", store_id) }
     scope :for_employee, ->(employee_id) { joins(:assignment, :employee).where("assignments.employee_id = ?", employee_id) }
     scope :past, -> { where('date < ?', Date.current) }

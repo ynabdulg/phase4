@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :shift_jobs
   resources :jobs
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :stores
   resources :assignments
   resources :employees
@@ -47,6 +46,7 @@ Rails.application.routes.draw do
   get 'home' => 'home#home', as: :main
   get 'about' => 'home#about', as: :about
   get 'contact' => 'home#contact', as: :contact
+  get 'privacy' => 'home#privacy', as: :privacy
   
   
   #links for login and logout

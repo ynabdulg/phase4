@@ -27,5 +27,33 @@ FactoryBot.define do
     end_date {1.month.ago.to_date}
     pay_level {1}
   end
+  
+  factory :flavor do 
+    name {"Mango Madness"}
+    active {true}
+  end
+  
+  factory :job do
+    name {"Ice Cream Server"}
+    description {"scopes ice cream for customer, takes orders"}
+    active {true}
+  end
+  
+  factory :shift do
+    association :assignment
+    date {Date.current}
+    start_time {"09:54:00 UTC"}
+    notes {"employee needs to be present at all times during his or her shift, employee can have one hour lunch break"}
+  end
+  
+  factory :shift_jobs do
+    association :shift
+    association :job
+  end 
+  
+  factory :store_flavors do 
+    association :store
+    association :flavor
+  end 
 
 end

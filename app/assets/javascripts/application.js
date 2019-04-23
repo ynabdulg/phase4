@@ -17,6 +17,9 @@
 $( document ).ready(function () {
     $(".dropdown-button").dropdown();
     $('select').material_select();
+    $('.datepicker').on('mousedown',function(event){
+    event.preventDefault(); //so the picker doesn't disappear 
+    });
     $('.datepicker').pickadate({    
         format: 'mmmm dd, yyyy',    
         formatSubmit: 'mmmm dd, yyyy',     
@@ -27,7 +30,19 @@ $( document ).ready(function () {
         close: 'Ok',     
         closeOnSelect: false // Close upon selecting a date,   
     });
+     $('.timepicker').on('mousedown',function(event){
+    event.preventDefault(); //so the picker doesn't disappear 
+    });
+    $('.timepicker').pickatime({
+    default: 'now',
+    twelvehour: true, // change to 12 hour AM/PM clock from 24 hour
+    donetext: 'OK',
+    autoclose: false,
+    });
 });
 $( document ).ready(function () {
     $('.parallax').parallax();
 });
+$(document).ready(function() {
+    $('input#input_text, textarea').characterCounter();
+  });

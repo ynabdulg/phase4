@@ -1,8 +1,12 @@
 class Job < ApplicationRecord
     
     #callbacks
-    #before_destroy
-    #after_rollback :deactivate
+    before_destroy :before_delete?
+    after_rollback :deactivate
+    
+    # Relationships
+    has_many :shift_jobs
+    has_many :shifts, through: :shift_jobs
     
     # Validations
     # make sure required fields are present

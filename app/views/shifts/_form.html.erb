@@ -1,17 +1,57 @@
+<%= form_for(@shift) do |f| %>
+<%= hidden_field_tag "shift[author_ids][]", nil%>
+  <% if @shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
 
-<%= simple_form_for(@shift) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <ul>
+      <% @shift.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div class="col s8 centered">
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr valign="top">
+			<td>
+				<h2>Shift details:</h2>
 
-  <div class="form-inputs">
-    <%= f.input :assignment_id %>
-    <%= f.input :date %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.input :notes %>
+    <div class="input-field">
+			    <%= f.label :assignment_id %><br />
+			    <%= f.collection_select :assignment_id, Assignment.chronological, :id, :id, :prompt => "Select ..." %>
+			  </div>
+			  
+    <div class="input-field">     
+	    <%= f.label :date %>     
+		<%= f.text_field :date, prompt: "Date", class: "datepicker", :value => 
+		(f.object.date.strftime('%B %d, %Y') if f.object.date != nil)%>   
+	</div>
+    
+    <div class="input-field">     
+	    <%= f.label :start_time %>     
+		<%= f.text_field :start_time, prompt: "Start Time", class: "timepicker", :value => 
+		(f.object.start_time.strftime('%I %M, %p') if f.object.start_time != nil)%>   
+	</div>
+	
+	<div class="input-field">     
+	    <%= f.label :end_time %>     
+		<%= f.text_field :end_time, prompt: "End Time", class: "timepicker", :value => 
+		(f.object.end_time.strftime('%I %M, %p') if f.object.end_time != nil)%>   
+	</div>
+	
+    <div class="input-field">
+		<%= f.label :notes %><br />
+	    <%= f.text_area :notes, :class=>"materialize-textarea"%>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+			  <div class="actions">    
+			  	<%= f.submit :class=>"btn waves-effect waves-light btn green" %>     
+			  	<%= link_to 'Cancel', shifts_path, :class => 'waves-effect waves-light btn red' %>   
+			  </div>
+			</td>
+			<td width="25">&nbsp;</td>
+		</tr>
+	</table>
+	</div>
 <% end %>

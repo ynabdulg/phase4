@@ -10,7 +10,7 @@ class Employee < ApplicationRecord
   has_many :assignments
   has_many :stores, through: :assignments
   has_many :shifts, through: :assignments
-  has_one :user, dependent: :destroy
+  has_one :user
   
   #nested user
   accepts_nested_attributes_for :user, reject_if: lambda { |user| user[:email].blank? }, allow_destroy: true

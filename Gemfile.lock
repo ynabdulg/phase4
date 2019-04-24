@@ -139,6 +139,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (5.2.2.1)
       actionpack (= 5.2.2.1)
       activesupport (= 5.2.2.1)
@@ -234,6 +236,7 @@ DEPENDENCIES
   materialize-sass
   puma (~> 3.11)
   rails (~> 5.2.2, >= 5.2.2.1)
+  rails-ujs
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda
@@ -254,4 +257,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.16.0
+   2.0.1

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ShiftControllerTest < ActionDispatch::IntegrationTest
   setup do
-    create_contexts
+    create_contexts  #create contexts all 
   end
 
   test "should get index" do

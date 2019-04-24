@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ShiftsControllerTest < ActionDispatch::IntegrationTest
+class ShiftControllerTest < ActionDispatch::IntegrationTest
   setup do
     @shift = shifts(:one)
   end

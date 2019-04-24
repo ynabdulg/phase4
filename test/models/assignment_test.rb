@@ -1,9 +1,10 @@
 require 'test_helper'
 
-class AssignmentsTest < ActiveSupport::TestCase
+class AssignmentTest < ActiveSupport::TestCase
   # Test relationships
-   should belong_to(:employee)
-   should belong_to(:store)
+  should belong_to(:employee)
+  should belong_to(:store)
+  should have_many(:shifts)
 
   # # Test basic validations
   # # for pay level

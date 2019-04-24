@@ -46,12 +46,12 @@ FactoryBot.define do
     notes {"employee needs to be present at all times during his or her shift, employee can have one hour lunch break"}
   end
   
-  factory :shift_jobs do
+  factory :shift_job do
     association :shift
     association :job
   end 
   
-  factory :store_flavors do 
+  factory :store_flavor do 
     association :store
     association :flavor
   end 

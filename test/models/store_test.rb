@@ -1,9 +1,12 @@
 require 'test_helper'
 
-class StoresTest < ActiveSupport::TestCase
+class StoreTest < ActiveSupport::TestCase
   # Test relationships
   should have_many(:assignments)
   should have_many(:employees).through(:assignments)
+  should have_many(:shifts).through(:assignments)
+  should have_many(:store_flavors)
+  should have_many(:flavors).through(:store_flavors)
 
   # # Test basic validations
   should validate_presence_of(:name)

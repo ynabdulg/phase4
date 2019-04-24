@@ -85,7 +85,7 @@ class ShiftTest < ActiveSupport::TestCase
 
     # test the scope 'for_next_days'
     should "have a scope called for_next_days" do
-      assert_equal 1, Shift.for_next_days(0).size
+      assert_equal 0, Shift.for_next_days(0).size
       assert_equal 2, Shift.for_next_days(1).size
       assert_equal 3, Shift.for_next_days(2).size
       assert_equal 4, Shift.for_next_days(3).size

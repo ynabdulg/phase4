@@ -1,9 +1,15 @@
 require 'test_helper'
 
-class EmployeesTest < ActiveSupport::TestCase
+class EmployeeTest < ActiveSupport::TestCase
   # Test relationships
   should have_many(:assignments)
   should have_many(:stores).through(:assignments)
+  should have_many(:shifts).through(:assignments)
+
+  #testing for nested class
+  # should have_one(:user).dependent(:destroy)
+  # should accept_nested_attributes_for(:user).allow_destroy(true)
+  
   
   # Test basic validations
    should validate_presence_of(:first_name)

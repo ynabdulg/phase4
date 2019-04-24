@@ -7,6 +7,15 @@ require 'rails/test_help'
 
 require 'contexts'
 
+include Contexts::StoreContexts
+include Contexts::EmployeeContexts
+include Contexts::AssignmentContexts
+include Contexts::ShiftContexts
+include Contexts::JobContexts
+include Contexts::FlavorContexts
+include Contexts::ShiftJobContexts
+include Contexts::StoreFlavorContexts
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

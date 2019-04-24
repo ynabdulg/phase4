@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StoreFlavorsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @store_flavor = store_flavors(:one)
+    create_contexts
   end
 
   test "should get index" do
@@ -17,30 +17,31 @@ class StoreFlavorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create store_flavor" do
     assert_difference('StoreFlavor.count') do
-      post store_flavors_url, params: { store_flavor: { flavor_id: @store_flavor.flavor_id, store_id: @store_flavor.store_id } }
+      @store_flavor5 = FactoryBot.create(:store_flavor, store: @cmu, flavor: @flavor3) 
+      post store_flavors_url, params: { store_flavor: { flavor_id: @store_flavor5.flavor_id, store_id: @store_flavor5.store_id } }
     end
 
     assert_redirected_to store_flavor_url(StoreFlavor.last)
   end
 
   test "should show store_flavor" do
-    get store_flavor_url(@store_flavor)
+    get store_flavor_url(@store_flavor3)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_store_flavor_url(@store_flavor)
+    get edit_store_flavor_url(@store_flavor3)
     assert_response :success
   end
 
   test "should update store_flavor" do
-    patch store_flavor_url(@store_flavor), params: { store_flavor: { flavor_id: @store_flavor.flavor_id, store_id: @store_flavor.store_id } }
-    assert_redirected_to store_flavor_url(@store_flavor)
+    patch store_flavor_url(@store_flavor3), params: { store_flavor: { flavor_id: @store_flavor3.flavor_id, store_id: @store_flavor3.store_id } }
+    assert_redirected_to store_flavor_url(@store_flavor3)
   end
 
   test "should destroy store_flavor" do
     assert_difference('StoreFlavor.count', -1) do
-      delete store_flavor_url(@store_flavor)
+      delete store_flavor_url(@store_flavor3)
     end
 
     assert_redirected_to store_flavors_url

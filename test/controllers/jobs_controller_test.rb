@@ -2,7 +2,7 @@ require 'test_helper'
 
 class JobsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @job = jobs(:one)
+    create_contexts
   end
 
   test "should get index" do
@@ -17,30 +17,29 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job" do
     assert_difference('Job.count') do
-      post jobs_url, params: { job: { active: @job.active, description: @job.description, name: @job.name } }
+      @job5 = FactoryBot.create(:job, active: true, description: "this is a test", name: "Kitchen Cleaner")
+      post jobs_url, params: { job: { active: @job5.active, description: @job5.description, name: @job5.name } }
     end
-
-    assert_redirected_to job_url(Job.last)
   end
 
   test "should show job" do
-    get job_url(@job)
+    get job_url(@job3)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_job_url(@job)
+    get edit_job_url(@job3)
     assert_response :success
   end
 
   test "should update job" do
-    patch job_url(@job), params: { job: { active: @job.active, description: @job.description, name: @job.name } }
-    assert_redirected_to job_url(@job)
+    patch job_url(@job2), params: { job: { active: @job2.active, description: @job2.description, name: @job2.name } }
+    assert_redirected_to job_url(@job2)
   end
 
   test "should destroy job" do
     assert_difference('Job.count', -1) do
-      delete job_url(@job)
+      delete job_url(@job2)
     end
 
     assert_redirected_to jobs_url

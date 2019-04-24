@@ -27,6 +27,18 @@
 			    <%= f.text_field :last_name %>
 			  </div>
 			  
+			  <%= f.fields_for :user do |field|%>
+			  <div class="input-field">
+			    <%= field.label :email %><br />
+			    <%= field.text_field :email %>
+			  </div>
+			    
+			    <div class="input-field">
+			    <%= field.label :password %><br />
+			    <%= field.password_field :password %>
+			    </div>
+			  <% end %>
+			  
 			  <div class="input-field">
 			    <%= f.label :ssn %><br />
 			    <%= f.text_field :ssn %>

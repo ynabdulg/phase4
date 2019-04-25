@@ -1,5 +1,5 @@
 <%= form_for(@assignment) do |f| %>
-<%= hidden_field_tag "assignment[author_ids][]", nil%>
+
   <% if @assignment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>

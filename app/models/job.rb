@@ -20,7 +20,7 @@ class Job < ApplicationRecord
     
     #callbacks 
     private
-    def before_delete?
+    def before_delete? #check if job has been worked by an employee
         self.shift_jobs.empty?
     end
 

@@ -38,11 +38,7 @@ class Shift < ApplicationRecord
     
     #methods for shift
     def completed?
-        if self.shift_jobs.count > 0
-            true
-        else
-            false
-        end
+        self.shift_jobs.count > 0
     end
     
     def start_now

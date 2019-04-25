@@ -1,5 +1,5 @@
 <%= form_for(@job) do |f| %>
-<%= hidden_field_tag "job[author_ids][]", nil%>
+
   <% if @job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>

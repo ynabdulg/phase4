@@ -1,5 +1,5 @@
 <%= form_for(@shift) do |f| %>
-<%= hidden_field_tag "shift[author_ids][]", nil%>
+
   <% if @shift.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>

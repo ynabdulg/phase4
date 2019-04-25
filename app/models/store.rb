@@ -1,8 +1,8 @@
 class Store < ApplicationRecord
   # Callbacks
   before_save :reformat_phone
-  before_destroy :before_delete?
-  after_rollback :deactivate
+    before_destroy :before_delete
+    after_rollback :deactivate
   
   # Relationships
   has_many :assignments
@@ -44,14 +44,16 @@ class Store < ApplicationRecord
   end
 
 
-  def before_delete?
-      false
-  end
+  #callbacks
+    private
+    def before_delete
+        throw :abort
+    end
 
 
-  def deactivate
-      self.update_attribute(:active, false)
-  end
+    def deactivate
+        self.update_attribute(:active, false)
+    end
 
 end
 

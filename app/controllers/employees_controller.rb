@@ -45,8 +45,14 @@ class EmployeesController < ApplicationController
     end
     
     def create    
-        @employee = Employee.new(employee_params)     
-        if @employee.save       
+        @employee = Employee.new(employee_params) 
+        
+        puts "inside create"
+        
+        if @employee.save
+            
+            puts "inside save"
+            
             redirect_to employee_path(@employee), notice: "#{@employee.name} was added to the system."     
         else       
             render action: 'new'     

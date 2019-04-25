@@ -26,12 +26,36 @@
   <li><%= link_to "Add an Employee", new_employee_path %></li> 
 </ul>
 
+<ul id="dropdown4" class="dropdown-content">   
+  <li><%= link_to "List Jobs", jobs_path %></li>   
+  <li><%= link_to "Add a Job", new_job_path %></li> 
+</ul>
+
+<ul id="dropdown5" class="dropdown-content">   
+  <li><%= link_to "List Shifts", shifts_path %></li>   
+  <li><%= link_to "Add a Shift", new_shift_path %></li> 
+</ul>
+
+<ul id="dropdown6" class="dropdown-content">   
+  <li><%= link_to "List Flavors", flavors_path %></li>   
+  <li><%= link_to "Add a Flavor", new_flavor_path %></li> 
+</ul>
+
+<ul id="dropdown7" class="dropdown-content">   
+  <li><%= link_to "List Store_Flavors", store_flavors_path %></li>   
+  <li><%= link_to "Add a Store_Flavor", new_store_flavor_path %></li> 
+</ul>
+
+<ul id="dropdown8" class="dropdown-content">   
+  <li><%= link_to "List Shift_Jobs", shift_jobs_path %></li>   
+  <li><%= link_to "Add a Shift_Job", new_shift_job_path %></li> 
+</ul>
+
 
 <nav>   
   <div class="nav-wrapper">     
     &nbsp&nbsp     
-    <a href="home" class="brand-logo">Amazing & Marvelous Creamery</a> 
-    <a href="#" class="brand-logo center"><img src="https://purepng.com/public/uploads/large/purepng.com-ice-creamice-creamcreamsweetfrozen-1411527619000jmeti.png" width="60" height="60"></a>
+    
  
     <ul class="right hide-on-med-and-down">       
       <li><%# link_to "employees", employees_path %></li>
@@ -40,6 +64,11 @@
       <li><a class="dropdown-button" href="/stores" data-activates="dropdown1">Stores<i class="material-icons right">arrow_drop_down</i></a></li> 
       <li><a class="dropdown-button" href="/assignments" data-activates="dropdown2">Assignments<i class="material-icons right">arrow_drop_down</i></a></li>
       <li><a class="dropdown-button" href="/employees" data-activates="dropdown3">Employees<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="/jobs" data-activates="dropdown4">Jobs<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="/shifts" data-activates="dropdown5">Shifts<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="/flavors" data-activates="dropdown6">Flavors<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="/store_flavors" data-activates="dropdown7">Store_Flavors<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="/shift_jobs" data-activates="dropdown8">Shift_Jobs<i class="material-icons right">arrow_drop_down</i></a></li>
       <li><%= link_to 'Logout', logout_path, :class=>"btn waves-effect waves-light btn red" %></li>
     </ul> 
  

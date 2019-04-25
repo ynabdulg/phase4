@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="center white">
+<h2>Store_Flavor details</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
+  <thead>
+          <tr>
+              <th>Store</th>
+              <th>Flavor</th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><%=Store.find(@store_flavor.store_id).name%></td>
+            <td><%=Flavor.find(@store_flavor.flavor_id).name%></td>
+          </tr>
+  </tbody>
+</table>
+</br>
+</br>
+<button class="waves-effect waves-light btn red"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_store_flavor_path(@store_flavor), :class=>"white-text" %> </button> 
+<button class="waves-effect waves-light btn green"><i class="material-icons right">keyboard_backspace</i><%= link_to 'Back', store_flavors_path, :class=>"white-text" %> </button> 
+</div>
 
-<p>
-  <strong>Store:</strong>
-  <%= @store_flavor.store_id %>
-</p>
-
-<p>
-  <strong>Flavor:</strong>
-  <%= @store_flavor.flavor_id %>
-</p>
-
-<%= link_to 'Edit', edit_store_flavor_path(@store_flavor) %> |
-<%= link_to 'Back', store_flavors_path %>
+<div class="col s1">    
+</div> 
+<div class="col s3">       
+        <!-- SIDEBAR CONTENT GOES HERE -->       
+        <%= render partial: 'partials/store_flavors/quick_links' %>     
+</div>

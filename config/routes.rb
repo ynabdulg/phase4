@@ -41,6 +41,15 @@ Rails.application.routes.draw do
   get 'for_five' => 'assignments#for_five', as: :for_five_assignments
   get 'for_six' => 'assignments#for_six', as: :for_six_assignments
   
+  
+  # links for shift scopes
+  get 'completed' => 'shifts#completed', as: :completed_shifts
+  get 'incompleted' => 'shifts#incompleted', as: :incompleted_shifts
+  get 'past' => 'shifts#past', as: :past_shifts
+  get 'upcoming' => 'shifts#upcoming', as: :upcoming_shifts
+  get 'by_store' => 'shifts#by_store', as: :by_store_shifts
+  get 'by_employee' => 'shifts#by_employee', as: :by_employee_shifts
+  
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main
@@ -48,10 +57,10 @@ Rails.application.routes.draw do
   get 'contact' => 'home#contact', as: :contact
   get 'privacy' => 'home#privacy', as: :privacy
   
-  #page routes for user's abilities
-  get 'manager_home' => 'home#manager_home', as: :manager_home
-  get 'admin_home' => 'home#admin_home', as: :admin_home
-  get 'employee_home' => 'home#employee_home', as: :employee_home
+  # #page routes for user's abilities
+  # get 'manager_home' => 'home#manager_home', as: :manager_home
+  # get 'admin_home' => 'home#admin_home', as: :admin_home
+  # get 'employee_home' => 'home#employee_home', as: :employee_home
 
   
   

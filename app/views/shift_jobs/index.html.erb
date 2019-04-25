@@ -1,25 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Shift Jobs</h1>
-
-<table>
+<div class="center white">
+<h2>shift_jobs in the System</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+          <tr>
+              <th>shift_job</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
   </thead>
-
   <tbody>
-    <% @shift_jobs.each do |shift_job| %>
-      <tr>
-        <td><%= link_to 'Show', shift_job %></td>
-        <td><%= link_to 'Edit', edit_shift_job_path(shift_job) %></td>
-        <td><%= link_to 'Destroy', shift_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
+<% @shift_jobs.each do |shift_job| %>
+  <tr>
+  <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">chrome_reader_mode</i><%= link_to shift_job.name, shift_job_path(shift_job), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_shift_job_path(shift_job), :class=>"white-text" %> </button></td> 
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', shift_job, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
+  </tr>
+<% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Shift Job', new_shift_job_path %>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @shift_jobs, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+</div>
+<br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/shift_jobs/quick_links' %>     
+</div> 
+</div>

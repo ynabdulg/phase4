@@ -4,7 +4,31 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.json
   def index
-    @shifts = Shift.all.paginate(:page => params[:page]).per_page(10)
+    @shifts = Shift.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def completed
+    @shifts = Shift.completed.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def incomplete
+    @shifts = Shift.completed.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def past
+    @shifts = Shift.past.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def upcoming
+    @shifts = Shift.upcoming.chronological.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def by_store
+    @shifts = Shift.by_store.paginate(:page => params[:page]).per_page(10)
+  end
+  
+  def by_employee
+    @shifts = Shift.by_employee.paginate(:page => params[:page]).per_page(10)
   end
 
   # GET /shifts/1

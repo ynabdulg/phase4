@@ -8,6 +8,7 @@ require './test/sets/job_contexts'
 require './test/sets/flavor_contexts'
 require './test/sets/shift_job_contexts'
 require './test/sets/store_flavor_contexts'
+require './test/sets/user_contexts'
 
 module Contexts
   # explicitly include all sets of contexts used for testing 
@@ -19,6 +20,7 @@ module Contexts
   include Contexts::FlavorContexts
   include Contexts::ShiftJobContexts
   include Contexts::StoreFlavorContexts
+  include Contexts::UserContexts
   
  def create_contexts
     create_employees

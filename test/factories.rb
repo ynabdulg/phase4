@@ -55,5 +55,10 @@ FactoryBot.define do
     association :store
     association :flavor
   end 
+  
+  factory :user do 
+    email {"yara@creamery.com"}
+    password {"1234"}
+  end
 
 end

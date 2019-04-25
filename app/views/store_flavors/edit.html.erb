@@ -2,5 +2,6 @@
 
 <%= render 'form', store_flavor: @store_flavor %>
 
-<%= link_to 'Show', @store_flavor %> |
-<%= link_to 'Back', store_flavors_path %>
+
+<button class="waves-effect waves-teal btn green"><i class="material-icons right">fiber_new</i><%= link_to 'Show', @store_flavor, :class=>"white-text" %> </button>
+<button class="waves-effect waves-teal btn blue"><i class="material-icons right">keyboard_backspace</i><%= link_to 'Back', store_flavors_path, :class=>"white-text" %> </button>

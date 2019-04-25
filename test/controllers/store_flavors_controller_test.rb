@@ -17,8 +17,8 @@ class StoreFlavorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create store_flavor" do
     assert_difference('StoreFlavor.count') do
-      @store_flavor5 = FactoryBot.create(:store_flavor, store: @cmu, flavor: @flavor3) 
-      post store_flavors_url, params: { store_flavor: { flavor_id: @store_flavor5.flavor_id, store_id: @store_flavor5.store_id } }
+      #@store_flavor5 = FactoryBot.create(:store_flavor, store: @cmu, flavor: @flavor3) 
+      post store_flavors_url, params: { store_flavor: { flavor_id: @flavor3, store_id: @cmu } }
     end
   end
 

@@ -34,7 +34,8 @@ class EmployeesController < ApplicationController
     end
     
     def new     
-        @employee = Employee.new   
+        @employee = Employee.new
+        @employee.build_user
     end
     
     def show
@@ -44,8 +45,14 @@ class EmployeesController < ApplicationController
     end
     
     def create    
-        @employee = Employee.new(employee_params)     
-        if @employee.save       
+        @employee = Employee.new(employee_params) 
+        
+        puts "inside create"
+        
+        if @employee.save
+            
+            puts "inside save"
+            
             redirect_to employee_path(@employee), notice: "#{@employee.name} was added to the system."     
         else       
             render action: 'new'     
@@ -67,7 +74,7 @@ class EmployeesController < ApplicationController
     
     private   
     def employee_params     
-        params.require(:employee).permit(:first_name, :last_name, :ssn, :date_of_birth, :phone, :role, :active) 
+        params.require(:employee).permit(:first_name, :last_name, :ssn, :date_of_birth, :phone, :role, :active, user_attributes: [:id, :email, :password]) 
     end
     
     def set_employee 

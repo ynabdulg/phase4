@@ -29,10 +29,7 @@ class ShiftTest < ActiveSupport::TestCase
   should_not allow_value("bad").for(:start_time)
   should_not allow_value(nil).for(:start_time)
   
-  # test start-time
-  should allow_value(Time.now).for(:end_time)
-  should allow_value(1.hour.from_now).for(:end_time)
-  should allow_value(20.hours.from_now).for(:end_time)
+  # test end-time
   should_not allow_value("bad").for(:end_time)
   should_not allow_value(15665).for(:end_time)
   
@@ -45,7 +42,7 @@ class ShiftTest < ActiveSupport::TestCase
     end
 
     teardown do
-      #destroy_contexts
+      destroy_contexts
     end
 
     
@@ -128,14 +125,16 @@ class ShiftTest < ActiveSupport::TestCase
     # test start_now method
     should "have start_now method that updates database to current time" do 
       @shift1.start_now
-      assert_equal Time.current, @shift1.start_time
+      assert_in_delta  @shift1.start_time, Time.zone.now, 1.second
+      #assert_equal Time.current, @shift1.start_time
     end
 
 
     # test end_now method
     should "have end_now method that updates database to current time" do 
-      @shift1.start_now
-      assert_equal Time.current, @shift1.start_time
+      @shift1.end_now
+      assert_in_delta @shift1.end_time, Time.zone.now, 1.second
+      #assert_equal Time.current, @shift1.start_time
     end
 end
 end

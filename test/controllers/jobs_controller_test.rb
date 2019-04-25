@@ -17,8 +17,8 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job" do
     assert_difference('Job.count') do
-      @job5 = FactoryBot.create(:job, active: true, description: "this is a test", name: "Kitchen Cleaner")
-      post jobs_url, params: { job: { active: @job5.active, description: @job5.description, name: @job5.name } }
+      # @job5 = FactoryBot.create(:job, active: true, description: "this is a test", name: "Ice cream scooper")
+      post jobs_url, params: { job: { active: true, description: "this is a test", name: "Ice cream scooper" } }
     end
   end
 
@@ -33,7 +33,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update job" do
-    patch job_url(@job2), params: { job: { active: @job2.active, description: @job2.description, name: @job2.name } }
+    patch job_url(@job2), params: { job: { active: @job2.active, description: @job2.description, name: @job3.name } }
     assert_redirected_to job_url(@job2)
   end
 

@@ -2,11 +2,15 @@
   "MiniTest": {
     "coverage": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/home/ubuntu/workspace/phase3/creamery/app/models/employee.rb": [
         1,
         null,
         1,
         1,
+=======
+      "/home/ubuntu/workspace/phase3/creamery/app/models/flavor.rb": [
+>>>>>>> new_models
         1,
         1,
         null,
@@ -14,17 +18,21 @@
         null,
         1,
         1,
+<<<<<<< HEAD
         1,
 =======
       "/home/ubuntu/workspace/phase3/creamery/app/models/store.rb": [
 >>>>>>> new_models
         1,
         null,
+=======
+>>>>>>> new_models
         null,
         1,
         null,
         null,
         1,
+<<<<<<< HEAD
         693,
         1,
         1,
@@ -42,10 +50,13 @@
         12,
         null,
         null,
+=======
+>>>>>>> new_models
         1,
         28,
         null,
         null,
+<<<<<<< HEAD
         1,
         1,
         null,
@@ -57,17 +68,26 @@
         1110,
         344,
         null,
+=======
+        null,
+>>>>>>> new_models
         null,
         1,
         2,
         null,
         null,
+<<<<<<< HEAD
         1,
+=======
+>>>>>>> new_models
         3,
+        3,
+        5,
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         null,
         null,
         null,
@@ -110,12 +130,20 @@
         433,
         null,
         null,
+=======
+        1,
+        72,
+>>>>>>> new_models
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         0,
         0,
+=======
+        72,
+>>>>>>> new_models
         null,
         null,
         null,
@@ -135,6 +163,7 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/ubuntu/workspace/phase3/creamery/app/models/assignment.rb": [
         1,
         null,
@@ -212,10 +241,18 @@
         168,
 >>>>>>> new_models
         17,
+=======
+      "/home/ubuntu/workspace/phase3/creamery/app/models/store_flavor.rb": [
+        1,
+        null,
+        1,
+        1,
+>>>>>>> new_models
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
 <<<<<<< HEAD
         1543,
         525,
@@ -227,26 +264,33 @@
         null,
         null,
         null,
+=======
+>>>>>>> new_models
         null
       ],
-      "/home/ubuntu/workspace/phase3/creamery/app/models/shift.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/store.rb": [
         1,
         null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
         1,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         1,
         null,
+<<<<<<< HEAD
         176,
+=======
+        1,
+>>>>>>> new_models
         null,
         1,
         null,
@@ -255,6 +299,7 @@
         1,
         null,
         null,
+<<<<<<< HEAD
         2,
         2,
         2,
@@ -266,24 +311,15 @@
         5,
         2,
         2,
+=======
+        4,
+        171,
+        3,
+>>>>>>> new_models
         null,
         null,
         null,
         1,
-        2,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         null,
@@ -291,14 +327,33 @@
         1,
         null,
         1,
+        210,
+        210,
+        210,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+<<<<<<< HEAD
         191,
         0,
         null,
+=======
+        105,
+>>>>>>> new_models
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         170,
+=======
+        105,
+        null,
+        null,
+>>>>>>> new_models
         null,
         null
       ],
@@ -326,12 +381,27 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         1,
-        1,
-        1,
-        1,
+=======
+        5,
         null,
         null,
+>>>>>>> new_models
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+        null,
+        null,
+=======
+        785,
+        null,
+        null,
+        493,
+        171,
+        null,
+>>>>>>> new_models
         null,
         1,
         null,
@@ -358,14 +428,25 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         321,
         321,
         321,
+=======
+        258,
+>>>>>>> new_models
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         193,
+=======
+        258,
+        258,
+        null,
+        null,
+>>>>>>> new_models
         null,
         null,
         null,
@@ -377,43 +458,119 @@
         null
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/home/ubuntu/workspace/phase3/creamery/app/models/job.rb": [
 =======
       "/home/ubuntu/workspace/phase3/creamery/app/models/store_flavor.rb": [
+=======
+      "/home/ubuntu/workspace/phase3/creamery/app/models/assignment.rb": [
         1,
         null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        156,
+        62,
+        1,
+        1,
 >>>>>>> new_models
         1,
         1,
         null,
         null,
+        5,
+        5,
+        2,
+        2,
+        2,
+        7,
+        7,
+        5,
+        3,
+        null,
+        null,
+>>>>>>> new_models
+        1,
         null,
         1,
+        146,
+        146,
+        145,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        928,
+        168,
+        17,
+        null,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         null
       ],
       "/home/ubuntu/workspace/phase3/creamery/app/models/flavor.rb": [
 >>>>>>> new_models
+=======
+        472,
+        168,
+        17,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/models/shift.rb": [
+>>>>>>> new_models
         1,
         null,
         null,
         1,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         1,
+=======
+>>>>>>> new_models
         null,
         null,
         1,
 >>>>>>> new_models
         1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
         1,
         null,
+        61,
         null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        2,
+        2,
+        5,
         3,
+<<<<<<< HEAD
         3,
 <<<<<<< HEAD
         7,
@@ -422,21 +579,58 @@
         null,
         1,
 =======
+=======
+        518,
+        2,
+>>>>>>> new_models
         5,
+        4,
+        3,
+        3,
+        3,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         null,
         1,
         1,
-        16,
+        null,
+        null,
+        null,
         null,
         null,
         null,
         1,
+        null,
+        1,
+        73,
         0,
         null,
         null,
         null,
+        null,
+        1,
+        56,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/phase3/creamery/app/models/shift_job.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
         null
       ],
       "/home/ubuntu/workspace/phase3/creamery/app/models/job.rb": [
@@ -491,7 +685,7 @@
 >>>>>>> new_models
         1,
         1,
-        16,
+        72,
         null,
         null,
         1,
@@ -505,17 +699,30 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/phase3/creamery/app/models/shift_job.rb": [
+      "/home/ubuntu/workspace/phase3/creamery/app/models/user.rb": [
         1,
         null,
         1,
         null,
+<<<<<<< HEAD
         null,
+=======
+>>>>>>> new_models
         1,
         null,
         null,
         null,
+        null,
         1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/ubuntu/workspace/phase3/creamery/app/controllers/application_controller.rb": [
@@ -596,8 +803,15 @@
         1,
         null,
         null,
+<<<<<<< HEAD
         1,
         1,
+=======
+        0,
+        0,
+        0,
+        0,
+>>>>>>> new_models
         null,
         null,
         null,
@@ -669,8 +883,10 @@
         1,
         null,
         0,
+        null,
         0,
         null,
+<<<<<<< HEAD
         null,
         null,
         null,
@@ -682,6 +898,15 @@
         2,
         1,
         null,
+=======
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+>>>>>>> new_models
         0,
         0,
         null,
@@ -1199,6 +1424,15 @@
         0,
         0,
         0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
         0
       ],
       "/home/ubuntu/workspace/phase3/creamery/app/controllers/store_flavors_controller.rb": [
@@ -1394,24 +1628,13 @@
 =======
         null,
         null
-      ],
-      "/home/ubuntu/workspace/phase3/creamery/app/models/user.rb": [
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1556101371
+>>>>>>> new_models
+=======
+    "timestamp": 1556203146
 >>>>>>> new_models
   }
 }

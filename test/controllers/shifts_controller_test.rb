@@ -17,8 +17,8 @@ class ShiftControllerTest < ActionDispatch::IntegrationTest
 
   test "should create shift" do
     assert_difference('Shift.count') do
-       @shift5 = FactoryBot.create(:shift, assignment: @promote_ben, date: 2.days.from_now.to_date, start_time: Time.current, notes: "this is a test hiiiiii")
-      post shifts_url, params: { shift: { assignment_id: @shift5.assignment_id, date: @shift5.date, end_time: @shift5.end_time, notes: @shift5.notes, start_time: @shift5.start_time } }
+       #@shift5 = FactoryBot.create(:shift, assignment: @promote_ben, date: 2.days.from_now.to_date, start_time: Time.current, notes: "this is a test hiiiiii")
+      post shifts_url, params: { shift: { assignmen_id: @promote_ben, date: 2.days.from_now.to_date, start_time: Time.current, notes: "this is a test hiiiiii" } }
     end
   end
 

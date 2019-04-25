@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_040659) do
+ActiveRecord::Schema.define(version: 2019_04_25_143440) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer "store_id"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2019_04_17_040659) do
   create_table "shifts", force: :cascade do |t|
     t.integer "assignment_id"
     t.date "date"
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 2019_04_17_040659) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "employee_id"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.integer "employee_id"
   end
 
 end

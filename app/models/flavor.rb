@@ -1,7 +1,7 @@
 class Flavor < ApplicationRecord
     
     # Callbacks
-    before_destroy :before_delete?
+    before_destroy :before_delete
     after_rollback :deactivate
     
     # Relationships
@@ -20,8 +20,8 @@ class Flavor < ApplicationRecord
     
     #callbacks
     private
-    def before_delete?
-        false
+    def before_delete
+        throw :abort
     end
 
 

@@ -48,6 +48,12 @@ Rails.application.routes.draw do
   get 'contact' => 'home#contact', as: :contact
   get 'privacy' => 'home#privacy', as: :privacy
   
+  #page routes for user's abilities
+  get 'manager_home' => 'home#manager_home', as: :manager_home
+  get 'admin_home' => 'home#admin_home', as: :admin_home
+  get 'employee_home' => 'home#employee_home', as: :employee_home
+
+  
   
   #links for login and logout
   get 'sessions/new', to: 'sessions#new', as: :login

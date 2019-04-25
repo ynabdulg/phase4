@@ -17,8 +17,8 @@ class ShiftJobControllerTest < ActionDispatch::IntegrationTest
 
   test "should create shift_job" do
     assert_difference('ShiftJob.count') do
-       @shift_job2 = FactoryBot.create(:shift_job, shift: @shift2, job: @job4) 
-    post shift_jobs_url, params: { shift_job: { shift_id: @shift_job2.shift_id, job_id: @shift_job2.job_id } }
+       #@shift_job2 = FactoryBot.create(:shift_job, shift: @shift2, job: @job4) 
+    post shift_jobs_url, params: { shift_job: { shift_id: @shift2, job_id: @job4 } }
     end
   end
 
@@ -33,7 +33,7 @@ class ShiftJobControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update shift_job" do
-    patch shift_job_url(@shift_job2), params: { shift_job: { shift_id: @shift4.id, job_id: @shift_job2.job_id } }
+    patch shift_job_url(@shift_job2), params: { shift_job: { shift_id: @shift_job2.shift_id, job_id: @shift_job2.job_id } }
     assert_redirected_to shift_job_url(@shift_job2)
   end
 

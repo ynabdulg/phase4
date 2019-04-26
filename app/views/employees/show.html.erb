@@ -12,6 +12,7 @@
               <th>Phone Number</th>
               <th>Role</th>
               <th>Active</th>
+              <th>Email</th>
           </tr>
   </thead>
   <tbody>
@@ -23,6 +24,7 @@
             <td><%= @employee.phone %></td>
             <td><%= @employee.role %></td>
             <td><%= @employee.active %></td>
+            <td><%= @employee.user.email %></td>
           </tr>
   </tbody>
 </table>

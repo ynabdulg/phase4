@@ -13,7 +13,7 @@ class Employee < ApplicationRecord
   has_one :user
   
   #nested user
-  accepts_nested_attributes_for :user, reject_if: lambda { |user| user[:email].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :user, :allow_destroy => true
   
   # Validations
   validates_presence_of :first_name, :last_name, :date_of_birth, :ssn, :role

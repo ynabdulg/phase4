@@ -11,7 +11,7 @@ class ShiftsController < ApplicationController
     @shifts = Shift.completed.chronological.paginate(:page => params[:page]).per_page(10)
   end
   
-  def incomplete
+  def incompleted
     @shifts = Shift.completed.chronological.paginate(:page => params[:page]).per_page(10)
   end
   

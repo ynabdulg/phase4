@@ -11,7 +11,7 @@
   </thead>
   <tbody>
           <tr>
-            <td>@shift_job.shift_id</td>
+            <td><%= @shift_job.shift_id %></td>
             <td><%=Job.find(@shift_job.job_id).name%></td>
           </tr>
   </tbody>
@@ -24,7 +24,4 @@
 
 <div class="col s1">    
 </div> 
-<div class="col s3">       
-        <!-- SIDEBAR CONTENT GOES HERE -->       
-        <%= render partial: 'partials/shift_jobs/quick_links' %>     
-</div>
+

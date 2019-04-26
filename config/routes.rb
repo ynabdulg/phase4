@@ -45,18 +45,18 @@ Rails.application.routes.draw do
   # links for shift scopes
   get 'completed' => 'shifts#completed', as: :completed_shifts
   get 'incompleted' => 'shifts#incompleted', as: :incompleted_shifts
-  get 'past_shifts' => 'shifts#past', as: :past_shifts
-  get 'upcoming_shifts' => 'shifts#upcoming', as: :upcoming_shifts
-  get 'by_store_shifts' => 'shifts#by_store', as: :by_store_shifts
-  get 'by_employee_shifts' => 'shifts#by_employee', as: :by_employee_shifts
+  get 'past_shifts' => 'shifts#past_shifts', as: :past_shifts
+  get 'upcoming_shifts' => 'shifts#upcoming_shifts', as: :upcoming_shifts
+  get 'by_store_shifts' => 'shifts#by_store_shifts', as: :by_store_shifts
+  get 'by_employee_shifts' => 'shifts#by_employee_shifts', as: :by_employee_shifts
   
    # links for store scopes
-  get 'active_job' => 'jobs#active', as: :active_jobs
-  get 'inactive_job' => 'jobs#inactive', as: :inactive_jobs
+  get 'active_job' => 'jobs#active_job', as: :active_jobs
+  get 'inactive_job' => 'jobs#inactive_job', as: :inactive_jobs
   
   # links for flavor scopes
-  get 'active_flavor' => 'flavors#active', as: :active_flavors
-  get 'inactive_flavor' => 'flavors#inactive', as: :inactive_flavors
+  get 'active_flavor' => 'flavors#active_flavor', as: :active_flavors
+  get 'inactive_flavor' => 'flavors#inactive_flavor', as: :inactive_flavors
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main

@@ -22,7 +22,7 @@
 			  
 		<div class="input-field">
 			    <%= f.label :flavor_id %><br />
-			    <%= f.collection_select :flavor_id, Store.alphabetical, :id, :name, :prompt => "Select ..." %>
+			    <%= f.collection_select :flavor_id, Flavor.alphabetical, :id, :name, :prompt => "Select ..." %>
 			  </div>
 
 			  <div class="actions">    

@@ -2,6 +2,7 @@ class Shift < ApplicationRecord
     
     #callbacks
     before_create :set_end_time
+    before_destroy :before_delete?
     
     # Relationships
     belongs_to :assignment
@@ -66,4 +67,14 @@ class Shift < ApplicationRecord
     def set_end_time
         self.end_time = self.start_time + (10800) #3*60*60
     end
+    
+    private
+    def past?
+        self.date.to_date < Date.current
+    end 
+    
+    def before_delete? #check if job has been worked by an employee
+        throw :abort if past?
+    end
+
 end

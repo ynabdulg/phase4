@@ -1,7 +1,7 @@
 class Job < ApplicationRecord
     
     #callbacks
-    before_destroy :before_delete?
+    before_destroy :before_delete? 
     after_rollback :deactivate
     
     # Relationships
@@ -20,17 +20,17 @@ class Job < ApplicationRecord
     
     #callbacks 
     private
-    def before_delete? #check if job has been worked by an employee
+    def worked?
         self.shift_jobs.empty?
-    end
-
-    def change_to_inactive
-        self.update_attribute(:active, false)
+    end 
+    
+    def before_delete? #check if job has been worked by an employee
+        throw :abort if not worked?
     end
 
     def deactivate
-        change_to_inactive if !self.shift_jobs.nil? && self.before_delete? == false
-        self.shift_jobs = nil
+        self.update_attribute(:active, false)
     end
+
   
 end

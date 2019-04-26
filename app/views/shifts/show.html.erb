@@ -19,7 +19,7 @@
         <td><%= @shift.assignment_id %></td>
         <td><%= @shift.date.strftime("%m/%d/%y") %></td>
         <td><%= @shift.start_time.strftime("%I:%M%p") %></td>
-        <td><%= @shift.end_time .strftime("%I:%M%p") unless shift.end_time.nil? %></td>
+        <td><%= @shift.end_time .strftime("%I:%M%p") unless @shift.end_time.nil? %></td>
         <td><%= @shift.notes %></td>
       </tr>
   </tbody>

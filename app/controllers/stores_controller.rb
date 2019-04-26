@@ -42,7 +42,7 @@ class StoresController < ApplicationController
     
     def destroy     
         @store.destroy     
-        redirect_to stores_url   
+         redirect_to store_path  
     end 
     
     private   

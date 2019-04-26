@@ -16,7 +16,7 @@
   <tr>
   <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">store</i><%= link_to store.name, store_path(store), :class=>"white-text" %> </button></td>
   <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_store_path(store), :class=>"white-text" %> </button></td> 
-  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', store, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Make Inactive', store, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
   
   </tr>
 <% end %>

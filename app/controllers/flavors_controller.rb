@@ -6,6 +6,14 @@ class FlavorsController < ApplicationController
   def index
     @flavors = Flavor.all
   end
+  
+  def active_flavor
+    @flavors = Flavor.active
+  end
+  
+  def inactive_flavor
+    @flavors = Flavor.inactive
+  end
 
   # GET /flavors/1
   # GET /flavors/1.json
@@ -55,10 +63,7 @@ class FlavorsController < ApplicationController
   # DELETE /flavors/1.json
   def destroy
     @flavor.destroy
-    respond_to do |format|
-      format.html { redirect_to flavors_url, notice: 'Flavor was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to flavor_path
   end
 
   private

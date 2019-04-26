@@ -68,7 +68,8 @@ class EmployeesController < ApplicationController
     end
     
     def destroy     
-        @employee.destroy     
+        @employee.destroy
+        @employee.user.destroy
         redirect_to employees_url   
     end 
     

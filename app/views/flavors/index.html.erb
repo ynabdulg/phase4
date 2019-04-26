@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Flavors</h1>
-
-<table>
+<div class="center white">
+<h2>flavors in the System</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Active</th>
-      <th colspan="3"></th>
-    </tr>
+          <tr>
+              <th>flavor</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
   </thead>
-
   <tbody>
-    <% @flavors.each do |flavor| %>
-      <tr>
-        <td><%= flavor.name %></td>
-        <td><%= flavor.active %></td>
-        <td><%= link_to 'Show', flavor %></td>
-        <td><%= link_to 'Edit', edit_flavor_path(flavor) %></td>
-        <td><%= link_to 'Destroy', flavor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+
+<% @flavors.each do |flavor| %>
+  <tr>
+  <td><button class="waves-effect waves-teal btn purple"><i class="material-icons right">cake</i><%= link_to flavor.name, flavor_path(flavor), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_flavor_path(flavor), :class=>"white-text" %> </button></td> 
+  <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', flavor, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
+  
+  </tr>
+<% end %>
   </tbody>
 </table>
+</div>
 
-<br>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
 
-<%= link_to 'New Flavor', new_flavor_path %>
+</span>
+</div>
+<br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/flavors/quick_links' %>     
+</div> 
+</div>

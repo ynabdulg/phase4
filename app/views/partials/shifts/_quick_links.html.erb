@@ -1,0 +1,25 @@
+ <style>
+  
+</style>
+
+<div class="row">
+    <div class="col 3">
+      <div class="card orange">  
+        <div class="card-image" alt="shp">
+          <img src="https://res.cloudinary.com/yuppiechef/image/upload/v1464631901/blog/yuppiechef/gluhwein-serving-ice-cream_ukvjtd.jpg" width="100" height="250">
+          <a class="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">search</i></a>
+        </div>
+        <div class="card-content">
+          <span class="card-title">Filter</span>
+    <ul class="collection">
+      <li><%= link_to 'All shifts', shifts_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Past shifts', past_shifts_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Upcoming shifts', upcoming_shifts_path, :class => "collection-item" %></li>
+      <li><%= link_to 'shifts Ordered by Store', by_store_shifts_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Completed shifts', completed_shifts_path, :class => "collection-item" %></li>
+      <li><%= link_to 'Incompleted shifts', incompleted_shifts_path, :class => "collection-item" %></li>
+    </ul>
+   </div>
+      </div>
+    </div>
+  </div>

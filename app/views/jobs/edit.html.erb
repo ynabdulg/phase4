@@ -2,5 +2,7 @@
 
 <%= render 'form', job: @job %>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+<div class="col s8">
+<button class="waves-effect waves-teal btn green"><i class="material-icons right">fiber_new</i><%= link_to link_to link_to 'Show', @job, :class=>"white-text" %> </button>
+<button class="waves-effect waves-teal btn blue"><i class="material-icons right">keyboard_backspace</i><%= link_to link_to 'Back', jobs_path, :class=>"white-text" %> </button>
+</div>

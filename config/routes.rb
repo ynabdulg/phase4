@@ -45,11 +45,14 @@ Rails.application.routes.draw do
   # links for shift scopes
   get 'completed' => 'shifts#completed', as: :completed_shifts
   get 'incompleted' => 'shifts#incompleted', as: :incompleted_shifts
-  get 'past' => 'shifts#past', as: :past_shifts
-  get 'upcoming' => 'shifts#upcoming', as: :upcoming_shifts
-  get 'by_store' => 'shifts#by_store', as: :by_store_shifts
-  get 'by_employee' => 'shifts#by_employee', as: :by_employee_shifts
+  get 'past_shifts' => 'shifts#past', as: :past_shifts
+  get 'upcoming_shifts' => 'shifts#upcoming', as: :upcoming_shifts
+  get 'by_store_shifts' => 'shifts#by_store', as: :by_store_shifts
+  get 'by_employee_shifts' => 'shifts#by_employee', as: :by_employee_shifts
   
+   # links for store scopes
+  get 'active_job' => 'jobs#active', as: :active_jobs
+  get 'inactive_job' => 'jobs#inactive', as: :inactive_jobs
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main

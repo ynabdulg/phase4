@@ -15,19 +15,19 @@ class ShiftsController < ApplicationController
     @shifts = Shift.completed.chronological.paginate(:page => params[:page]).per_page(10)
   end
   
-  def past
+  def past_shifts
     @shifts = Shift.past.chronological.paginate(:page => params[:page]).per_page(10)
   end
   
-  def upcoming
+  def upcoming_shifts
     @shifts = Shift.upcoming.chronological.paginate(:page => params[:page]).per_page(10)
   end
   
-  def by_store
+  def by_store_shifts
     @shifts = Shift.by_store.paginate(:page => params[:page]).per_page(10)
   end
   
-  def by_employee
+  def by_employee_shifts
     @shifts = Shift.by_employee.paginate(:page => params[:page]).per_page(10)
   end
 

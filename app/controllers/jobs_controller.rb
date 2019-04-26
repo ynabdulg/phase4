@@ -6,6 +6,14 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
   end
+  
+  def inactive_job
+        @jobs = Job.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end
+    
+    def active_job
+        @jobs = Job.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+    end
 
   # GET /jobs/1
   # GET /jobs/1.json

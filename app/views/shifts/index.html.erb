@@ -23,3 +23,18 @@
   </tbody>
 </table>
 </div>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @shifts, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+</div>
+<br />
+<div class="Section">
+<div class="col s1 center"> 
+</div>
+<div class="col s3 center">       
+    <!-- SIDEBAR CONTENT GOES HERE -->       
+    <%= render partial: 'partials/shifts/quick_links' %>     
+</div> 
+</div>

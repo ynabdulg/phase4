@@ -68,8 +68,13 @@ class EmployeesController < ApplicationController
     end
     
     def destroy     
+        if User != nil
+            user = User.find_by_employee_id(@employee.id)
+            if user != nil
+                user.destroy
+            end
+        end
         @employee.destroy
-        @employee.user.destroy
         redirect_to employees_url   
     end 
     

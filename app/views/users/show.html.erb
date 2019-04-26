@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="center white">
+<h2>user details</h2>
+</div>
+<div class="col s8">
+<table class="bordered centered white">
+  <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <td><%= @user.employee.name %></td>
+            <td><%= @user.email %></td>
+            <td><%= @user.password %></td>
+          </tr>
+  </tbody>
+</table>
+</br>
+</br>
+<button class="waves-effect waves-light btn red"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_user_path(@user), :class=>"white-text" %> </button> 
+<button class="waves-effect waves-light btn green"><i class="material-icons right">keyboard_backspace</i><%= link_to 'Back', users_path, :class=>"white-text" %> </button> 
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="col s1">    
+</div> 
+<div class="col s3">       
+</div>

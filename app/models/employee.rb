@@ -2,8 +2,9 @@ class Employee < ApplicationRecord
  # Callbacks
   before_save :reformat_phone
   before_validation :reformat_ssn
-  before_destroy :before_delete?
-  after_destroy :delete_assignments
+  # before_destroy :before_delete?
+  # after_destroy :delete_assignments
+  # after_rollback :deactivate
 
   
   # Relationships
@@ -78,23 +79,31 @@ class Employee < ApplicationRecord
    end
    
   #can only be deleted if the employee has never worked a shift.
-  def before_delete?
-    self.shifts.past.empty?
+  def has_shifts?
+    self.shifts.empty?
   end
 
-  #If the employee can be deleted, their assignment (if it exists) should also be deleted.
+    
+  def before_delete? 
+      throw :abort if has_shifts?
+  end
+
+  def deactivate
+      self.update_attribute(:active, false)
+  end
+  # #If the employee can be deleted, their assignment (if it exists) should also be deleted.
   def delete_assignments
-    if self.shifts.past.empty?
+    if self.shifts.empty?
       self.current_assignment.delete unless self.current_assignment.nil?
     end
   end
   
-  # If the employee can't be deleted, the employee should be made inactive, their current assignment terminated and all future shifts should be deleted. 
-  #delete future shifts 
-  def delete_future_shifts
-    @future = self.shifts.upcoming
-    @future.each {|shift| shift.destroy} unless @future.empty?
-  end
+  # # If the employee can't be deleted, the employee should be made inactive, their current assignment terminated and all future shifts should be deleted. 
+  # #delete future shifts 
+  # def delete_future_shifts
+  #   @future = self.shifts.upcoming
+  #   @future.each {|shift| shift.destroy} unless @future.empty?
+  # end
   
 end
 

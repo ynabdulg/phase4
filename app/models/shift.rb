@@ -73,7 +73,7 @@ class Shift < ApplicationRecord
         self.date.to_date < Date.current
     end 
     
-    def before_delete? #check if job has been worked by an employee
+    def before_delete? #can only be deleted if date is today or in the future
         throw :abort if past?
     end
 

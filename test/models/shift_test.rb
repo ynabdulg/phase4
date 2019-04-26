@@ -136,5 +136,11 @@ class ShiftTest < ActiveSupport::TestCase
       assert_in_delta @shift1.end_time, Time.zone.now, 1.second
       #assert_equal Time.current, @shift1.start_time
     end
+    
+    #test only_current_assignment
+    should "not allow shift to be created if assignment not active" do
+      @a = FactoryBot.build(:shift, assignment: @assignment10, date: 1.days.from_now.to_date, start_time: Time.current, notes: "this is a test")
+        assert !@a.valid?
+    end
 end
 end

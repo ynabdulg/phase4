@@ -14,7 +14,7 @@
 
 <% @shifts.each do |shift| %>
   <tr>
-  <td><button class="waves-effect waves-teal btn purple"><i className="material-icons">chrome_reader_mode</i><%= link_to shift.name, shift_path(shift), :class=>"white-text" %> </button></td>
+  <td><button class="waves-effect waves-teal btn purple"><i class="material-icons">assignment</i><%= link_to shift.id, shift_path(shift), :class=>"white-text" %> </button></td>
   <td><button class="waves-effect waves-teal btn green"><i class="material-icons right">edit</i><%= link_to 'Edit', edit_shift_path(shift), :class=>"white-text" %> </button></td> 
   <td><button class="waves-effect waves-teal btn red"><i class="material-icons right">delete</i><%= link_to 'Destroy', shift, confirm: 'Are you sure?', method: :delete, :class=>"white-text" %> </button></td>
   

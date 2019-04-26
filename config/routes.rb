@@ -53,6 +53,10 @@ Rails.application.routes.draw do
    # links for store scopes
   get 'active_job' => 'jobs#active', as: :active_jobs
   get 'inactive_job' => 'jobs#inactive', as: :inactive_jobs
+  
+  # links for flavor scopes
+  get 'active_flavor' => 'flavors#active', as: :active_flavors
+  get 'inactive_flavor' => 'flavors#inactive', as: :inactive_flavors
  
   #page routes for the footer
   get 'home' => 'home#home', as: :main
